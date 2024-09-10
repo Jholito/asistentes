@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>generar-codigo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar class="ion-align-items-center">
+      <ion-buttons slot="start">
+        <ion-button (click)="goBack()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title size="large">Generar Codigo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>Ingresa los datos necesarios</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      <ion-item>
+        <ion-input placeholder="Sección" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Docente" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Sala" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Fecha" required></ion-input>
+      </ion-item>
+      <ion-button shape="round" (click)="openQRCodeModal()">Generar Código</ion-button>
+      <ion-modal [isOpen]="isQRCodeModalOpen">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Escanea tu QR</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="closeQRCodeModal()">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <div style="background-color: white; display: inline-block; padding: 10px; border-radius: 8px;">
+              <img alt="QR" src="../../assets/qr.png" style="display: block; max-width: 100%;" />
+            </div>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar class="ion-align-items-center">
+      <ion-buttons slot="start">
+        <ion-button (click)="goBack()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title size="large">Iniciar Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Iniciar Sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="email" placeholder="correo@correo.cl" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Contraseña"required></ion-input>
+      </ion-item>
+      <ion-router-link routerLink="/recuperar-cuenta" class="txtcenter mtb-16">
+        Recuperar Contraseña
+      </ion-router-link>
+      <ion-button expand="full" (click)="login()" shape="round">Iniciar Sesión</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

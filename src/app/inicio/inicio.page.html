@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="txtcenter">¡ Bienvenido !</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="../../assets/principal.PNG" /> 
+    <ion-card-content>
+      <ion-button shape="round" expand="block" [routerLink]="['/login']">Iniciar Sesión</ion-button>
+      <ion-button shape="round" expand="block" [routerLink]="['/register']">Registrarse</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

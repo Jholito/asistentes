@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Check In</ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="openMenu()">
+      <ion-icon name="menu">a</ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="txtcenter">Check In</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <img alt="Silhouette of mountains" src="../../assets/principal.PNG" /> 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">¡Registrar asistencia!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      Para registrar tu asistencia genera un código QR y marca.
+      <div class="button-container">        
+        <ion-button shape="round" routerLink="/generar-codigo">Generar Codigo</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>  
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">¡Justificar Asistencia!</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      En caso de no poder asistir a una clase, envía tu justificación aquí
+      <div class="button-container">
+        <ion-button shape="round" (click)="openJustificationModal()">Justificar</ion-button>
+        <ion-modal [isOpen]="isJustificationModalOpen">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Justifica tu asistencia</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button (click)="closeJustificationModal()">Cerrar</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding">
+              <ion-card>
+                <ion-card-content class="ion-text-center">
+                  <ion-item>
+                    <ion-input placeholder="Ingresa tu sección"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-textarea placeholder="Ingresa tu comentario" class="expanding-textarea"></ion-textarea>
+                  </ion-item>
+                  <ion-button shape="round" (click)="enviar()" class="mtb-16" id="enviar-alerta">Enviar</ion-button>
+                  <ion-alert
+                    trigger="enviar-alerta"
+                    header="Enviado!"
+                    message="Tu justificación ha sido enviada satisfactoriamente."
+                    [buttons]="alertButtons"
+                  ></ion-alert>
+                </ion-card-content>
+              </ion-card>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+      </div>
+    </ion-card-content>
+  </ion-card> 
+  
+</ion-content>

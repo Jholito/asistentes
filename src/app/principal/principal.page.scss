@@ -1,0 +1,14 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px; /* Ajusta el margen según sea necesario */
+  }
+
+  .expanding-textarea {
+    width: 100%; /* O el ancho que prefieras */
+    min-height: 100px; /* Ajusta la altura mínima según sea necesario */
+    max-height: 300px; /* Ajusta la altura máxima según sea necesario */
+    resize: vertical; /* Permite redimensionar verticalmente */
+    overflow-y: auto; /* Agrega barras de desplazamiento si el contenido excede la altura máxima */
+  }
+  
